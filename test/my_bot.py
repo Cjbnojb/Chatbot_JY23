@@ -1,14 +1,15 @@
 import discord
 import os
 import asyncio
-from keep_alive import keep_alive
+#from keep_alive import keep_alive
 
 # Intents specify which bucket of events you want to get access to.
 intents = discord.Intents.default()
 intents.message_content = True
 #intents.members = True 未激活
 
-recognized_bot = ["Cuijbnojb#8168", "JYBX_23#3169", "bobot1#7924", "bobot2#9520", "bobot0#6671"]
+recognized_bot = ["Cuijbnojb#8168", "JYBX_23#3169", 
+                "bobot1#7924", "bobot2#9520", "bobot0#6671"]
 allowed_channels = [1076802612793442314] # channels : #hhh, 
 allow_loop = True
 
@@ -30,8 +31,6 @@ async def on_message(message):
     return
   
   # only recognized-bot can use this to chat
-  print(client.user)
-  print(message.author)
   if client.user in message.mentions:
     if allow_loop:
       if str(message.author) in recognized_bot:
@@ -50,5 +49,4 @@ async def on_message(message):
     allow_loop = False
 
 # keep_alive()
-token = os.getenv("DISCORD_BOT_SECRET")
-client.run(token)
+client.run("MTA3Mzg0NjgxMzAxNjIxNTU3Mg.GYQNTk.JVrBRLiYKfQp40OB-Iyw7sC37fsVp1Qp9B9a4w")
